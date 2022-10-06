@@ -187,7 +187,8 @@ public:
   void setRemoveDuplicateAPs(boolean removeDuplicates);
   // sets a custom element to add to options page
   void setCustomOptionsElement(const char *element);
-   
+
+  // sets channel of AP for CaptivePortal
   void setAPChannel(int channel);
 
   String getConfiguredSTASSID(){
@@ -239,6 +240,7 @@ private:
 
   unsigned int _paramsCount = 0;
   unsigned int _minimumQuality = 0;
+  unsigned int _APChannel = 0;
   boolean _removeDuplicateAPs = true;
   boolean _shouldBreakAfterConfig = false;
 #ifdef NO_EXTRA_4K_HEAP
