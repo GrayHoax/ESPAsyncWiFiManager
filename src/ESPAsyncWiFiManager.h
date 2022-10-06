@@ -187,6 +187,8 @@ public:
   void setRemoveDuplicateAPs(boolean removeDuplicates);
   // sets a custom element to add to options page
   void setCustomOptionsElement(const char *element);
+   
+  void setAPChannel(int channel);
 
   String getConfiguredSTASSID(){
       return _ssid;
