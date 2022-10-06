@@ -107,6 +107,10 @@ void AsyncWiFiManager::addParameter(AsyncWiFiManagerParameter *p)
   DEBUG_WM(p->getID());
 }
 
+void setAPChannel(int channel) {
+  _APChannel = channel;
+}
+
 void AsyncWiFiManager::setupConfigPortal()
 {
   // dnsServer.reset(new DNSServer());
@@ -138,11 +142,11 @@ void AsyncWiFiManager::setupConfigPortal()
 
   if (_apPassword != NULL)
   {
-    WiFi.softAP(_apName, _apPassword); // password option
+    WiFi.softAP(_apName, _apPassword, _APChannel); // password option
   }
   else
   {
-    WiFi.softAP(_apName);
+    WiFi.softAP(_apName, "", _APChannel);
   }
 
   delay(500); // without delay I've seen the IP address blank
