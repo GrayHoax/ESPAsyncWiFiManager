@@ -107,10 +107,6 @@ void AsyncWiFiManager::addParameter(AsyncWiFiManagerParameter *p)
   DEBUG_WM(p->getID());
 }
 
-void setAPChannel(int channel) {
-  _APChannel = channel;
-}
-
 void AsyncWiFiManager::setupConfigPortal()
 {
   // dnsServer.reset(new DNSServer());
@@ -860,6 +856,10 @@ void AsyncWiFiManager::setAPStaticIPConfig(IPAddress ip,
   _ap_static_ip = ip;
   _ap_static_gw = gw;
   _ap_static_sn = sn;
+}
+
+void AsyncWiFiManager::setAPChannel(int channel) {
+  _APChannel = channel;
 }
 
 void AsyncWiFiManager::setSTAStaticIPConfig(IPAddress ip,
