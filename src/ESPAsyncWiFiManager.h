@@ -238,9 +238,10 @@ private:
   IPAddress _sta_static_dns1 = (uint32_t)0x00000000;
   IPAddress _sta_static_dns2 = (uint32_t)0x00000000;
 
+  int _APChannel;
+
   unsigned int _paramsCount = 0;
   unsigned int _minimumQuality = 0;
-  unsigned int _APChannel = 0;
   boolean _removeDuplicateAPs = true;
   boolean _shouldBreakAfterConfig = false;
 #ifdef NO_EXTRA_4K_HEAP
