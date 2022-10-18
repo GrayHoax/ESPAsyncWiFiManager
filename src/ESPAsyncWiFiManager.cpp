@@ -813,7 +813,7 @@ void AsyncWiFiManager::resetSettings()
   DEBUG_WM(F("settings invalidated"));
   DEBUG_WM(F("THIS MAY CAUSE AP NOT TO START UP PROPERLY. YOU NEED TO COMMENT IT OUT AFTER ERASING THE DATA."));
 
-  WiFi.mode(WIFI_AP_STA); // cannot erase if not in STA mode !
+  WiFi.mode(WIFI_STA); // cannot erase if not in STA mode !
   WiFi.persistent(true);
 #if defined(ESP8266)
   WiFi.disconnect(true);
@@ -912,7 +912,6 @@ void AsyncWiFiManager::handleRoot(AsyncWebServerRequest *request)
   page += "<h1>";
   page += _apName;
   page += "</h1>";
-  page += F("<h3>AsyncWiFiManager</h3>");
   page += FPSTR(HTTP_PORTAL_OPTIONS);
   page += _customOptionsElement;
   page += FPSTR(HTTP_END);
